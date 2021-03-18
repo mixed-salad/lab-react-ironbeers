@@ -36,3 +36,14 @@
     transform: rotate(360deg);
   }
 }
+
+/* Header */
+.header {
+  background-color: #7dcfc4;
+  height: 4em;
+}
+
+#header-img {
+  height: 80%;
+  color: white;
+}

@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
 import Header from './../components/Header';
 
-class Beers extends Component {
-  state = {
-    beers: [],
-  };
+class SingleBeer extends Component {
   render() {
     return (
       <div>
-        <Header></Header>
-        <h1>List of Beers</h1>
+        <Header />
+        <h1>Beer Details</h1>
       </div>
     );
   }
 }
 
-export default Beers;
+export default SingleBeer;
