@@ -5,7 +5,7 @@ import Beers from './views/Beers';
 import NewBeer from './views/NewBeer';
 import SingleBeer from './views/SingleBeer';
 import Home from './views/Home';
-import Card from './components/Card';
+import RandomBeer from './views/RandomBeer';
 
 import './App.css';
 
@@ -17,7 +17,7 @@ function App() {
           <Route path="/" component={Home} exact />
           <Route path="/beers" component={Beers} exact />
           <Route path="/beer/:id" component={SingleBeer} exact />
-          <Route path="/random-beer" component={SingleBeer} exact />
+          <Route path="/random-beer" component={RandomBeer} exact />
           <Route path="/new-beer" component={NewBeer} exact />
         </Switch>
       </BrowserRouter>
