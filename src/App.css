@@ -123,3 +123,33 @@
 .single-beer-description {
   text-align: left;
 }
+
+/* New Beer */
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.form-input {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+input,
+textarea {
+  width: 100%;
+  border-radius: 1em;
+  margin-bottom: 1em;
+  border-color: grey;
+}
+
+button {
+  border-radius: 1em;
+  background-color: #416964;
+  color: white;
+  padding: 0.5em;
+}

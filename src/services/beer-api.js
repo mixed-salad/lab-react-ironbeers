@@ -19,3 +19,11 @@ export const randomBeer = async () => {
   );
   return response.data;
 };
+
+export const newBeer = async (body) => {
+  const response = await axios.post(
+    `https://ih-beers-api2.herokuapp.com/beers/new`,
+    body
+  );
+  return response.data;
+};
