@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './../components/Header';
 import { listBeers } from './../services/beer-api';
+import { Link } from 'react-router-dom';
 
 class Beers extends Component {
   state = {
@@ -24,7 +25,7 @@ class Beers extends Component {
         <h1>List of Beers</h1>
         <div className="list-body">
           {this.state.beers.map((beer) => (
-            <div key={beer.id} className="beer-item">
+            <Link to={`/beer/${beer._id}`} key={beer._id} className="beer-item">
               <div>
                 <img
                   className="beer-img"
@@ -39,7 +40,7 @@ class Beers extends Component {
                   Created by: {beer.contributed_by}
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
