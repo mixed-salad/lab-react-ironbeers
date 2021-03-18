@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
 import Header from './../components/Header';
-import { listBeers } from './../services/beer-api';
+import SearchBar from './../components/SearchBar';
+import { listBeers, searchBeer } from './../services/beer-api';
 import { Link } from 'react-router-dom';
 
 class Beers extends Component {
   state = {
     beers: [],
+    searchQuery: '',
   };
 
   componentDidMount() {
     this.loadBeerList();
   }
+
+  searchQuery = async (query) => {
+    const response = await searchBeer(query);
+    console.log(response);
+    this.setState({
+      beers: response,
+      searchQuery: query,
+    });
+  };
 
   async loadBeerList() {
     const beers = await listBeers();
@@ -23,6 +34,10 @@ class Beers extends Component {
       <div>
         <Header></Header>
         <h1>List of Beers</h1>
+        <SearchBar
+          query={this.state.searchQuery}
+          onQueryChange={this.searchQuery}
+        />
         <div className="list-body">
           {this.state.beers.map((beer) => (
             <Link to={`/beer/${beer._id}`} key={beer._id} className="beer-item">

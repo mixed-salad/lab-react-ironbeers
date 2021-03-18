@@ -20,6 +20,13 @@ export const randomBeer = async () => {
   return response.data;
 };
 
+export const searchBeer = async (query) => {
+  const response = await axios.get(
+    `https://ih-beers-api2.herokuapp.com/beers/search?q=${query}`
+  );
+  return response.data;
+};
+
 export const newBeer = async (body) => {
   const response = await axios.post(
     `https://ih-beers-api2.herokuapp.com/beers/new`,
